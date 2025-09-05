@@ -13,7 +13,8 @@ public static int FactoBhai(int fact)
     public static void main(String[] args)
     {
         int n = 5;
+        int k = FactoBhai(n);
        //System.out.println( FactoBhai(n));
-       
+
     }
 }
