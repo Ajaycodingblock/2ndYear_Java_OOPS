@@ -1,32 +1,71 @@
 import java.util.*;
 
-
 public class CollectionFramework {
     public static void main(String[] args) {
-        ArrayList <Integer>  list = new ArrayList<>();
-        Scanner sc =  new Scanner(System.in);
 
-        list.add(45);
+        // ---------------- ARRAYLIST ----------------
+        // ArrayList: Dynamic array (resizable). Maintains insertion order.
+        // Allows duplicate values.
+        ArrayList<Integer> list = new ArrayList<>();
+
+        Scanner sc = new Scanner(System.in);
+
+        // Adding fixed elements
+        list.add(45);     // add(element)
         list.add(46);
         list.add(47);
         list.add(48);
 
-        System.out.println(list);
-        int n  = 5;
+        System.out.println("Initial ArrayList: " + list);
 
+        int n = 5;
+        System.out.println("Enter " + n + " numbers:");
 
-        for(int i = 0;i<n;i++)
-        {
-             int x = sc.nextInt();
-             list.add(x);
+        for (int i = 0; i < n; i++) {
+            int x = sc.nextInt();
+            list.add(x);   // adding user input
         }
-        System.out.println("Print using loop  : - ");
-int len = list.size();
-        for(int i = 0 ;i<len;i++)
-       {
-        System.out.println(list.get(i));
-       }
-        
+
+        System.out.println("\nPrint ArrayList using loop:");
+        int len = list.size();      // size()
+        for (int i = 0; i < len; i++) {
+            System.out.println(list.get(i));  // get(index)
+        }
+
+        // ---------------- ARRAYLIST IMPORTANT METHODS ----------------
+        System.out.println("\nArrayList Important Methods:");
+        System.out.println("Size: " + list.size());             // size()
+        System.out.println("Contains 47? " + list.contains(47)); // contains()
+        System.out.println("Index of 46: " + list.indexOf(46));  // indexOf()
+
+        list.set(0, 100);    // set(index, value)
+        System.out.println("After set(0,100): " + list);
+
+        list.remove(2);      // remove(index)
+        System.out.println("After remove(2): " + list);
+
+        // ---------------- HASHSET ----------------
+        // HashSet: Stores unique values only.
+        // Does NOT maintain order. Fast for search operations.
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(10);    // add()
+        set.add(20);
+        set.add(30);
+        set.add(20);    // duplicate (ignored)
+
+        System.out.println("\nHashSet: " + set);
+
+        // ---------------- HASHSET IMPORTANT METHODS ----------------
+        System.out.println("\nHashSet Important Methods:");
+        System.out.println("Contains 20? " + set.contains(20)); // contains()
+
+        set.remove(30);    // remove(value)
+        System.out.println("After removing 30: " + set);
+
+        System.out.println("Size of HashSet: " + set.size());   // size()
+
+        set.clear();       // clear()
+        System.out.println("After clear(): " + set);
     }
-    
 }
